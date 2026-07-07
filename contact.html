@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — ChipsChaps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<div class="page-loader"><div class="loader-badge">📞</div><div class="loader-label">ChipsChaps</div></div>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-mark">🍟</span> ChipsChaps</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="deals.html">Deals</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><span data-theme-icon>🌙</span></button>
+      <a class="nav-icon-btn" href="cart.html" aria-label="Cart">🛒<span class="cart-count" data-cart-count>0</span></a>
+      <button class="nav-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<div class="scrim"></div>
+<div class="mobile-panel">
+  <button class="mobile-panel-close" aria-label="Close menu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="deals.html">Deals</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html">Cart 🛒</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="crumb">Home / Contact</span>
+    <h1>Get In Touch</h1>
+    <p>Questions, feedback, or a catering request — we'd love to hear from you.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container" style="display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:flex-start;">
+    <div class="ticket reveal" style="padding:34px;">
+      <h3>Send Us a Message</h3>
+      <form id="contact-form">
+        <div class="form-grid" style="margin-top:18px;">
+          <div class="field"><label for="ct-name">Full Name</label><input id="ct-name" required placeholder="Your name"></div>
+          <div class="field"><label for="ct-email">Email</label><input id="ct-email" type="email" required placeholder="you@example.com"></div>
+          <div class="field full"><label for="ct-subject">Subject</label><input id="ct-subject" required placeholder="How can we help?"></div>
+          <div class="field full"><label for="ct-msg">Message</label><textarea id="ct-msg" required placeholder="Write your message..."></textarea></div>
+        </div>
+        <button class="btn btn-primary btn-block" style="margin-top:20px;" type="submit">Send Message</button>
+      </form>
+    </div>
+
+    <div class="reveal">
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="ticket" style="padding:22px; display:flex; gap:16px; align-items:center;">
+          <div class="food-badge" style="--sz:56px;">📍</div>
+          <div><b>Visit Us</b><p style="margin:2px 0 0;">Main Boulevard, Gulberg III, Lahore, Pakistan</p></div>
+        </div>
+        <div class="ticket" style="padding:22px; display:flex; gap:16px; align-items:center;">
+          <div class="food-badge" style="--sz:56px;">📧</div>
+          <div><b>Email Us</b><p style="margin:2px 0 0;">saliksaeed10@gmail.com</p></div>
+        </div>
+        <div class="ticket" style="padding:22px; display:flex; gap:16px; align-items:center;">
+          <div class="food-badge" style="--sz:56px;">📱</div>
+          <div><b>Call Us</b><p style="margin:2px 0 0;">+92 300 1234567</p></div>
+        </div>
+        <div class="ticket" style="padding:22px; display:flex; gap:16px; align-items:center;">
+          <div class="food-badge" style="--sz:56px;">🕐</div>
+          <div><b>Working Hours</b><p style="margin:2px 0 0;">Every day, 11:00 AM – 1:00 AM</p></div>
+        </div>
+        <div class="social-row" style="margin-top:4px;">
+          <a href="#" aria-label="Facebook" style="background:var(--bg-alt); color:var(--text);">📘</a>
+          <a href="#" aria-label="Instagram" style="background:var(--bg-alt); color:var(--text);">📷</a>
+          <a href="#" aria-label="Twitter" style="background:var(--bg-alt); color:var(--text);">🐦</a>
+          <a href="#" aria-label="TikTok" style="background:var(--bg-alt); color:var(--text);">🎵</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section--tight">
+  <div class="container">
+    <div class="ticket reveal" style="padding:0; overflow:hidden;">
+      <iframe title="ChipsChaps location map" src="https://www.google.com/maps?q=Gulberg%20III%20Lahore%20Pakistan&output=embed" width="100%" height="360" style="border:0; display:block;" loading="lazy"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand" style="color:#fff; margin-bottom:14px;"><span class="brand-mark">🍟</span> ChipsChaps</div>
+        <p>Fresh. Crispy. Delicious. Serving Lahore's best burgers, fries and fried chicken since day one.</p>
+        <div class="social-row">
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="Instagram">📷</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Menu</a></li>
+          <li><a href="deals.html">Deals</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul class="footer-links">
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="cart.html">Track Order</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+          <li><a href="admin.html">Admin Login</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p style="font-size:.9rem;">Get deals straight to your inbox.</p>
+        <form class="newsletter-row newsletter-form">
+          <input type="email" required placeholder="Email address">
+          <button class="btn btn-primary btn-sm" type="submit">Join</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ChipsChaps. All rights reserved.</span>
+      <span>Made with 🧡 for fast food lovers.</span>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" aria-label="Back to top">↑</button>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.getElementById("contact-form")?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    
+    const name = document.getElementById("ct-name").value;
+    const email = document.getElementById("ct-email").value;
+    const subject = document.getElementById("ct-subject").value;
+    const message = document.getElementById("ct-msg").value;
+    
+    try {
+      const response = await fetch("http://localhost:5000/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email, subject, message })
+      });
+      
+      const data = await response.json();
+      
+      if (data.success) {
+        Toast.show("Message sent! We'll get back to you shortly.", "success");
+        e.target.reset();
+      } else {
+        Toast.show("Failed to send message. Please try again.", "error");
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      Toast.show("Network error. Please try again.", "error");
+    }
+  });
+</script>
+</body>
+</html>

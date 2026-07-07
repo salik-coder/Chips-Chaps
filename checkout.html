@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — ChipsChaps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+<div class="page-loader"><div class="loader-badge">🧾</div><div class="loader-label">ChipsChaps</div></div>
+
+<header class="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="brand"><span class="brand-mark">🍟</span> ChipsChaps</a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="menu.html">Menu</a>
+      <a href="deals.html">Deals</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-icon-btn" data-theme-toggle aria-label="Toggle dark mode"><span data-theme-icon>🌙</span></button>
+      <a class="nav-icon-btn" href="cart.html" aria-label="Cart">🛒<span class="cart-count" data-cart-count>0</span></a>
+      <button class="nav-toggle" aria-label="Open menu">☰</button>
+    </div>
+  </div>
+</header>
+<div class="scrim"></div>
+<div class="mobile-panel">
+  <button class="mobile-panel-close" aria-label="Close menu">✕</button>
+  <a href="index.html">Home</a>
+  <a href="menu.html">Menu</a>
+  <a href="deals.html">Deals</a>
+  <a href="about.html">About</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html">Cart 🛒</a>
+</div>
+
+<section class="page-hero">
+  <div class="container">
+    <span class="crumb">Home / Cart / Checkout</span>
+    <h1>Checkout</h1>
+    <p>Almost there — just a few details and your order is on its way.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container cart-layout">
+    <form data-checkout-form novalidate>
+      <div class="ticket" style="padding:30px; margin-bottom:24px;">
+        <h3>Customer Information</h3>
+        <div class="form-grid" style="margin-top:16px;">
+          <div class="field"><label for="c-name">Full Name</label><input id="c-name" required placeholder="John Doe"></div>
+          <div class="field"><label for="c-phone">Phone</label><input id="c-phone" type="tel" required placeholder="+92 300 1234567"></div>
+          <div class="field full"><label for="c-email">Email</label><input id="c-email" type="email" required placeholder="you@example.com"></div>
+          <div class="field full"><label for="c-address">Address</label><input id="c-address" required placeholder="House #, Street, Area"></div>
+          <div class="field"><label for="c-city">City</label><input id="c-city" required placeholder="Lahore"></div>
+          <div class="field"><label for="c-postal">Postal Code</label><input id="c-postal" required placeholder="54000"></div>
+        </div>
+      </div>
+
+      <div class="ticket" style="padding:30px;">
+        <h3>Payment Method</h3>
+        <div class="pay-options" style="margin-top:16px;">
+          <label class="pay-option active">
+            <input type="radio" name="pay" value="cod" checked>
+            <span>💵 Cash on Delivery</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="pay" value="credit">
+            <span>💳 Credit Card</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="pay" value="debit">
+            <span>🏧 Debit Card</span>
+          </label>
+          <label class="pay-option">
+            <input type="radio" name="pay" value="paypal">
+            <span>🅿️ PayPal</span>
+          </label>
+        </div>
+        <button class="btn btn-primary btn-block" style="margin-top:24px;" type="submit">Place Order</button>
+      </div>
+    </form>
+
+    <aside class="ticket summary-card">
+      <div data-checkout-summary></div>
+    </aside>
+  </div>
+</section>
+
+<!-- Success Modal -->
+<div class="modal-backdrop" data-success-modal>
+  <div class="modal text-center">
+    <div class="food-badge" style="--sz:90px; margin:0 auto 18px;">🎉</div>
+    <h3>Order Placed!</h3>
+    <p>Your order <b data-order-id></b> has been received and is being prepared.</p>
+    <a href="index.html" class="btn btn-primary btn-block">Back to Home</a>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/cartpage.js"></script>
+<script src="js/checkout.js"></script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Dashboard — ChipsChaps</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body class="admin">
+
+<div class="admin-shell">
+  <aside class="admin-side">
+    <div class="admin-brand"><span class="brand-mark">🍟</span> ChipsChaps</div>
+    <nav class="admin-nav">
+      <a href="#" data-admin-tab="dashboard" class="active">📊 Dashboard</a>
+      <a href="#" data-admin-tab="products">🍔 Products</a>
+      <a href="#" data-admin-tab="orders">🧾 Orders</a>
+      <a href="#" data-admin-tab="customers">👥 Customers</a>
+      <a href="#" data-admin-tab="categories">🗂️ Categories</a>
+      <a href="#" data-admin-tab="bundles">🎁 Bundles</a>
+      <a href="#" data-admin-tab="messages">💬 Messages</a> 
+    </nav>
+    <div style="margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,.1);">
+      <a href="index.html" style="display:block; padding:12px 14px; font-family:var(--font-display); font-weight:600; font-size:.9rem;">← Back to Site</a>
+    </div>
+  </aside>
+
+  <main class="admin-main">
+    <div class="admin-topbar">
+      <h1 data-panel-title>Dashboard</h1>
+      <div style="display:flex; align-items:center; gap:10px;">
+        <span style="font-size:.85rem; color:var(--text-soft);">Logged in as</span>
+        <b>Admin</b>
+      </div>
+    </div>
+
+    <!-- DASHBOARD -->
+    <section data-admin-panel="dashboard">
+      <div class="stat-cards" data-stat-cards></div>
+      <div class="admin-grid">
+        <div class="panel">
+          <h3>Weekly Sales</h3>
+          <div class="bar-chart" data-bar-chart></div>
+        </div>
+        <div class="panel">
+          <h3>Menu by Category</h3>
+          <div class="donut-wrap" data-donut></div>
+        </div>
+      </div>
+      <div class="panel">
+        <h3>Recent Orders</h3>
+        <div data-recent-orders></div>
+      </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section data-admin-panel="products" class="hidden">
+      <div class="admin-toolbar">
+        <h3 style="margin:0;">Manage Products</h3>
+        <button class="btn btn-primary btn-sm" data-add-product-btn>+ Add Product</button>
+      </div>
+      <div class="panel" data-products-table></div>
+    </section>
+
+    <!-- ORDERS -->
+    <section data-admin-panel="orders" class="hidden">
+      <div class="panel" data-orders-table></div>
+    </section>
+
+    <!-- CUSTOMERS -->
+    <section data-admin-panel="customers" class="hidden">
+      <div class="panel" data-customers-table></div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section data-admin-panel="categories" class="hidden">
+      <div class="panel">
+        <h3>Categories</h3>
+        <div class="table-wrap"><table class="data-table">
+          <thead><tr><th>Icon</th><th>Category</th><th>Items</th></tr></thead>
+          <tbody id="cat-table-body"></tbody>
+        </table></div>
+      </div>
+    </section>
+
+    <!-- BUNDLES -->
+    <section data-admin-panel="bundles" class="hidden">
+      <div class="panel">
+        <h3>Active Bundles</h3>
+        <p style="color:var(--text-soft); font-size:.9rem;">Bundles are managed as combo deals shown on the public Deals page.</p>
+        <div class="table-wrap"><table class="data-table">
+          <thead><tr><th>Bundle</th><th>Items</th><th>Price</th><th>Savings</th></tr></thead>
+          <tbody id="bundle-table-body"></tbody>
+        </table></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- MESSAGES -->
+<section data-admin-panel="messages" class="hidden">
+    <div class="panel">
+        <div class="admin-toolbar">
+            <h3 style="margin:0;">Contact Messages</h3>
+            <button class="btn btn-outline btn-sm" id="refresh-messages">🔄 Refresh</button>
+        </div>
+        <div class="table-wrap">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>📅 Date</th>
+                        <th>👤 Name</th>
+                        <th>📧 Email</th>
+                        <th>📌 Subject</th>
+                        <th>💬 Message</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="messages-table-body">
+                    <tr><td colspan="7" style="text-align:center; padding:30px;">Loading messages...</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+
+<!-- Product Modal -->
+<div class="modal-backdrop" data-product-modal>
+  <div class="modal">
+    <div class="modal-head">
+      <h3 data-modal-title>Add Product</h3>
+      <button class="modal-close" data-modal-close>✕</button>
+    </div>
+    <form data-product-form>
+      <div class="form-grid">
+        <div class="field full"><label>Name</label><input name="name" required></div>
+        <div class="field">
+          <label>Category</label>
+          <select name="cat" required>
+            <option value="burgers">Burgers</option>
+            <option value="fries">Fries</option>
+            <option value="drinks">Drinks</option>
+            <option value="chicken">Chicken</option>
+            <option value="snacks">Snacks</option>
+            <option value="wraps">Wraps</option>
+            <option value="desserts">Desserts</option>
+          </select>
+        </div>
+        <div class="field"><label>Emoji</label><input name="emoji" placeholder="🍔"></div>
+        <div class="field full"><label>Description</label><textarea name="desc" required></textarea></div>
+        <div class="field"><label>Price ($)</label><input name="price" type="number" step="0.1" required></div>
+        <div class="field"><label>Old Price ($, optional)</label><input name="oldPrice" type="number" step="0.1"></div>
+        <div class="field"><label>Calories</label><input name="cal" type="number"></div>
+        <div class="field"><label>Cooking Time</label><input name="time" placeholder="10 min"></div>
+        <div class="field full">
+          <label style="display:flex; align-items:center; gap:8px;">
+            <input name="available" type="checkbox" style="width:auto;"> Available
+          </label>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-block" style="margin-top:20px;" type="submit">Save Product</button>
+    </form>
+  </div>
+</div>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/admin.js"></script>
+<script>
+ document.addEventListener("DOMContentLoaded", async () => {  // ✅ async 
+    const catBody = document.getElementById("cat-table-body");
+    if(catBody){
+      const menu = await getMenu();  // ✅ await 
+      catBody.innerHTML = CATEGORIES.filter(c=>c.id!=="all").map(c=>`
+        <tr><td style="font-size:1.3rem;">${c.icon}</td><td>${c.label}</td><td>${menu.filter(m=>m.cat===c.id).length}</td></tr>
+      `).join("");
+    }
+    const bundleBody = document.getElementById("bundle-table-body");
+    if(bundleBody){
+      bundleBody.innerHTML = DEALS.map(d=>`
+        <tr><td><b>${d.title}</b></td><td>${d.items.join(", ")}</td><td>$${d.price}</td><td>${d.save}%</td></tr>
+      `).join("");
+    }
+  });
+</script>
+</body>
+</html>
