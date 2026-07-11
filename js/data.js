@@ -156,7 +156,7 @@ async function saveMenu(menu) {
 //   (Is code ko sabse neeche paste karein)
 // =========================================================
 
-const API_URL = "https://chips-chaps-backend-production.up.railway.app/api";// =========================================================
+const API_URL = "https://chips-chaps-backend-production.up.railway.app/api";
 //   BACKEND SE PRODUCTS FETCH KAREIN
 // =========================================================
 

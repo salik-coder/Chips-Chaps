@@ -267,7 +267,7 @@ async renderMessagesTable() {
     if (!host) return;
     
     try {
-        const response = await fetch("http://localhost:5000/api/contact");
+        const response = await fetch(`${API_URL}/contact`);
         const messages = await response.json();
         
         if (messages.length === 0) {
@@ -300,12 +300,12 @@ async renderMessagesTable() {
                 const id = btn.dataset.viewMessage;
                 
                 // Mark as read
-                await fetch(`http://localhost:5000/api/contact/${id}/read`, {
+                await fetch(`${API_URL}/contact/${id}/read`, {
                     method: "PUT"
                 });
                 
                 // Get full message
-                const res = await fetch(`http://localhost:5000/api/contact/${id}`);
+                const res = await fetch(`${API_URL}/contact/${id}`);
                 const msg = await res.json();
                 
                 // Show full message in alert
@@ -321,7 +321,7 @@ async renderMessagesTable() {
             btn.addEventListener("click", async () => {
                 if (!confirm("Delete this message?")) return;
                 const id = btn.dataset.deleteMessage;
-                await fetch(`http://localhost:5000/api/contact/${id}`, {
+                await fetch(`${API_URL}/contact/${id}`, {
                     method: "DELETE"
                 });
                 Toast.show("Message deleted", "success");
